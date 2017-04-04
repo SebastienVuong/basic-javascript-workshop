@@ -35,15 +35,46 @@ function addTwoNumbers(num1, num2) {
 }
 
 function multiplyTwoNumbers(num1, num2) {
-
+    if (isNaN(num1) || isNaN(num2)) {
+        return undefined;
+    } else {
+        return num1 * num2;
+    }
 }
 
 function calculator(operation, num1, num2) {
-
+    switch(operation) {
+        case "add":
+            return num1 + num2;
+            break;
+        case "sub":
+            return num1 - num2;
+            break;
+        case "mult":
+            return num1 * num2;
+            break;
+        case "div":
+            return num1 / num2;
+            break;
+        default:
+            return undefined;
+    }
 }
 
 function repeatString(inputString, numRepetitions) {
-
+    if (inputString && numRepetitions) {
+        count = 1;
+        newString = "";
+        while (count <= numRepetitions) {
+            newString += inputString;
+            count++;
+        }
+        return newString;
+    } else if (inputString == "") {
+        return "";
+    } else {
+        return undefined;
+    }
 }
 
 function reverseString(inputString) {
