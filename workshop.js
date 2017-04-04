@@ -119,7 +119,19 @@ function capitalize(inputString) {
 }
 
 function sumOfNumbers(arrayOfNumbers) {
-
+    if (arrayOfNumbers.length == 0) {
+        return 0;
+    } else {
+        sum = 0;
+        for (i = 0; i < arrayOfNumbers.length; i++) {
+            if (isNaN(arrayOfNumbers[i])) {
+                     
+            } else {
+                sum += arrayOfNumbers[i];
+            }
+        }
+        return sum;
+    }
 }
 
 function uniqueElements(array1, array2) {

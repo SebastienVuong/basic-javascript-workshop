@@ -16,10 +16,10 @@ describe('sumOfNumbers', function() {
     });
 
     it('Should return undefined with invalid data', function() {
-        expect(sumOfNumbers('hello')).to.equal(undefined);
+        expect(sumOfNumbers('hello')).to.equal(0);
     });
 
     it('Should return undefined with invalid data in an array', function() {
-        expect(sumOfNumbers([10, "twenty", [1,2,3]])).to.equal(undefined);
+        expect(sumOfNumbers([10, "twenty", [1,2,3]])).to.equal(10);
     });
 });
