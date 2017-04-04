@@ -86,7 +86,14 @@ function reverseString(inputString) {
 }
 
 function longestWord(inputString) {
-
+    longestWord = "";
+    words = inputString.split(" ");
+    for (i = 0; i < words.length; i++) {
+        if (words[i].length >= longestWord.length) {
+            longestWord = words[i];
+        }
+    }
+    return longestWord
 }
 
 function capitalize(inputString) {

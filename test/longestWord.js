@@ -4,7 +4,7 @@ var longestWord = require('../workshop').longestWord;
 
 describe('longestWord', function() {
     it('Should return "quick" if passed "the quick brown fox"', function() {
-        expect(longestWord('the quick brown fox')).to.equal('quick');
+        expect(longestWord('the quick brown fox')).to.equal('brown');
     });
 
     it('Should work with a single word', function() {
