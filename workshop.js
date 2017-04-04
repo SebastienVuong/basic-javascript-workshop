@@ -135,11 +135,52 @@ function sumOfNumbers(arrayOfNumbers) {
 }
 
 function uniqueElements(array1, array2) {
+    if (Array.isArray(array1) && Array.isArray(array2)) {
+        uniqueElements = [];
+        for (i = 0; i < array1.length; i++) {
+            isUnique = true;
+            for (j = 0; j < array2.length; j++) {
+                if (array1[i]==array2[j]) {
+                    isUnique = false;
+                }
+            }
+            if (isUnique) {
+                uniqueElements.push(array1[i]);
+            }
+        }
+        for (i = 0; i < array2.length; i++) {
+            isUnique = true;
+            for (j = 0; j < array1.length; j++) {
+                if (array2[i]==array1[j]) {
+                    isUnique = false;
+                }
+            }
+            if (isUnique) {
+                uniqueElements.push(array2[i]);
+            }
+        }
+        return uniqueElements;  
+    } else {
+        return undefined;
+    }
 
 }
 
 function isPalindrome(inputString) {
-
+    workingString="";
+    var letters = /^[a-z]+$/;
+    for (i = 0; i < inputString.length; i++) {
+        if (letters.test(inputString[i].toLowerCase())) {
+            workingString += inputString[i].toLowerCase();
+        }
+    }
+    palindromeIndeed = true;
+    for (i = 0; i < workingString.length; i++) {
+        if (workingString[i]!=workingString[workingString.length-i-1]) {
+            palindromeIndeed = false;
+        }
+    }
+    return palindromeIndeed;
 }
 
 function wrapCharacter(inputString) {
