@@ -93,11 +93,29 @@ function longestWord(inputString) {
             longestWord = words[i];
         }
     }
-    return longestWord
+    return longestWord;
 }
 
 function capitalize(inputString) {
-
+    if (inputString) {
+        words = inputString.split(" ");
+        for (i = 0; i < words.length; i++) {
+            newWord = "";
+            newWord += words[i][0].toUpperCase();
+            for (j = 1; j < words[i].length; j++) {
+                newWord += words[i][j].toLowerCase();
+            }
+            words[i] = newWord;
+        }
+        finalString = words[0];
+        for (i = 1; i < words.length; i++) {
+            finalString += " ";
+            finalString += words[i];
+        }
+        return finalString;
+    } else {
+        return "";
+    }
 }
 
 function sumOfNumbers(arrayOfNumbers) {
