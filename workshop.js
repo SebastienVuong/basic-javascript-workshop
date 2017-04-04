@@ -15,11 +15,23 @@ function lastLetter(inputString) {
 }
 
 function letterAtPosition(inputString, position) {
-
+    if (inputString) {
+        if (position) {
+            return inputString[position];
+        } else {
+            return undefined;
+        }
+    } else {
+        return undefined;
+    }
 }
 
 function addTwoNumbers(num1, num2) {
-
+    if (isNaN(num1) || isNaN(num2)) {
+        return undefined;
+    } else {
+        return num1 + num2;
+    }
 }
 
 function multiplyTwoNumbers(num1, num2) {
