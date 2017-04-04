@@ -209,11 +209,54 @@ function wrapCharacter(inputString) {
 }
 
 function wrapWord(inputString) {
+    words = inputString.split(" ");
+    printLinePosition = 0;
+    output = words[0];
+    printLinePosition += words[0].length;
+    for (i = 1; i < words.length; i++) { // Taking word by word
+        if (printLinePosition + words[i].length >= 40) { // Overflow case
+            output += "\n";
+            printLinePosition = 0;
+            if (words[i].length >= 40) { // Freakish-ly long word case
+                output += words[i]; // Print it
+                output += "\n"; // Skip a line
+                printLinePosition = 0; // Reset printing position
+            } else {
+                output += words[i];
+                printLinePosition += words[i].length;
+            }
+        } else {
+            if (printLinePosition != 0) {
+                output += " ";
+                printLinePosition += 1;
+            }
 
+            output += words[i];
+            printLinePosition += words[i].length;
+
+        }
+    }
+    return output;
 }
 
 function bubbleSort(arrayOfNumbers) {
-
+    if (arrayOfNumbers.length == 0) {
+        return arrayOfNumbers;
+    } else {
+        sortingLeft = true;
+        while (sortingLeft) {
+            sortingLeft = false;
+            for (i = 0; i < arrayOfNumbers.length - 1; i++) { // Going element by element
+                if (arrayOfNumbers[i]>arrayOfNumbers[i+1]) {
+                    temp = arrayOfNumbers[i];
+                    arrayOfNumbers[i] = arrayOfNumbers[i+1];
+                    arrayOfNumbers[i+1] = temp;
+                    sortingLeft = true;
+                }
+            }
+        }
+        return arrayOfNumbers;
+    }
 }
 
 /***** DO NOT EDIT AFTER THIS LINE *****/
