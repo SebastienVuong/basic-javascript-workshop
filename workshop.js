@@ -184,7 +184,28 @@ function isPalindrome(inputString) {
 }
 
 function wrapCharacter(inputString) {
-
+    output = inputString[0];
+    printLinePosition = 1;
+    for (i = 1; i < inputString.length; i++) {
+        if (printLinePosition==40) { // First char of line
+            printLinePosition = 0;
+            output += "\n";
+            if (inputString[i]==" ") { // If first char is a space
+                // Just ignore it
+            } else { // First char is a char
+                output += inputString[i];
+                printLinePosition++;
+            }
+        } else { // Other chars of line
+            output += inputString[i];
+            printLinePosition++;
+        }
+        //console.log(printLinePosition)
+        //console.log(i)
+        //console.log(inputString[i])
+    }
+    console.log(output);
+    return output;
 }
 
 function wrapWord(inputString) {
